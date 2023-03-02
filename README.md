@@ -53,13 +53,13 @@ Planchuelo-Gómez Á, Descoteaux M, Aja-Fernández S, Hutter J, Jones DK, Tax CM
 
 The results related to the first full data-driven concrete autoencoders approach applied to MRI data are in the following reference:
 
-Tax CMW, Larochelle H, De Almeida Martins JP, Hutter J, Jones DK, Chamberland M, Descoteaux M. "Optimising multi-contrast MRI experiment design using concrete autoencoders". Proceedings of the 2021 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition, p. 1240. URL: [https://archive.ismrm.org/2021/1240.html](https://archive.ismrm.org/2021/1240.html).
+* Tax CMW, Larochelle H, De Almeida Martins JP, Hutter J, Jones DK, Chamberland M, Descoteaux M. "Optimising multi-contrast MRI experiment design using concrete autoencoders". Proceedings of the 2021 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition, p. 1240. URL: [https://archive.ismrm.org/2021/1240.html](https://archive.ismrm.org/2021/1240.html).
 
 The references for the signal equation employed in this project are:
 
-Hutter J, Slator PJ, Christiaens D, Teixeira RPA, Roberts T, Jackson L, Price AN, Malik S, Hajnal JV. "Integrated and efficient diffusion-relaxometry using ZEBRA". Scientific reports 2018, 8: 1-13. DOI: [10.1038/s41598-018-33463-2](https://doi.org/10.1038/s41598-018-33463-2).
+* Hutter J, Slator PJ, Christiaens D, Teixeira RPA, Roberts T, Jackson L, Price AN, Malik S, Hajnal JV. "Integrated and efficient diffusion-relaxometry using ZEBRA". Scientific reports 2018, 8: 1-13. DOI: [10.1038/s41598-018-33463-2](https://doi.org/10.1038/s41598-018-33463-2).
 
-Tax CM, Kleban E, Chamberland M, Baraković M, Rudrapatna U, Jones DK. "Measuring compartmental T2-orientational dependence in human brain white matter using a tiltable RF coil and diffusion-T2 correlation MRI". NeuroImage 2021, 236: 117967. DOI: [10.1016/j.neuroimage.2021.117967](https://doi.org/10.1016/j.neuroimage.2021.117967).
+* Tax CM, Kleban E, Chamberland M, Baraković M, Rudrapatna U, Jones DK. "Measuring compartmental T2-orientational dependence in human brain white matter using a tiltable RF coil and diffusion-T2 correlation MRI". NeuroImage 2021, 236: 117967. DOI: [10.1016/j.neuroimage.2021.117967](https://doi.org/10.1016/j.neuroimage.2021.117967).
 
 ## Acknowledgements
 

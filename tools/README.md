@@ -1,6 +1,6 @@
 # User guide
 
-This user guide briefly describes the python classes and functions used to carry out the diverse tasks. The tutorials showing how to run the code are in the "[tutorials](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/README.md)" folder. All the code or scripts shown in this folder must be run in the path containing this folder. The different guides are:
+This user guide briefly describes the python classes and functions used to carry out the diverse tasks. The tutorials showing how to run the code are in the "[tutorials](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/)" folder. All the code or scripts shown in this folder must be run in the path containing this folder. The different guides are:
 
 * [**Guide CL+NN**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/guide_clnn.md) describes the classes and functions used for the extraction of the sub-selected protocol and the prediction of the whole dataset with the upsampled MRI volumes with CL+NN, i.e., the full data-driven method.
 

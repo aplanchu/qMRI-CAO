@@ -12,7 +12,7 @@ This tutorial makes reference to the files [*script_indices_clnn*](https://githu
 
 ## Training and selection of the optimal sub-selection protocol
 
-This part makes reference to *script_indices_clnn*. The arguments of the script are:
+This part makes reference to [*script_indices_clnn*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_clnn). The arguments of the script are:
 
 * `data_file` (**INPUT**): h5 file that contains the dataset.
 
@@ -79,7 +79,7 @@ $ python trainer_files/only_ca/trainer.py \
 
 ## Saving the predicted MRI signal
 
-This part makes reference to *script_indices_clnn_predict*. In comparison with the previous script, the argument `path_save_ind` is no longer used. The additional arguments of the script are:
+This part makes reference to [*script_indices_clnn_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_clnn_predict). In comparison with the previous script, the argument `path_save_ind` is no longer used. The additional arguments of the script are:
 
 * `mask_file` (**INPUT**, optional): nifti file with the mask of the validation subject.
 

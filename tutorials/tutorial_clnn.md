@@ -91,7 +91,7 @@ This part makes reference to [*script_indices_clnn_predict*](https://github.com/
 
 The two last parameters can be used as well in the first training step, although this is not recommended as the temperature parameters of the concrete autoencoder would be the same as for the first epoch (i.e., different to the last saved epoch) and hence the training of the network would not be a continuation of the previous running.
 
-Assuming that we are in the folder were the "tools" directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset and 500 subselected measurements:
+Assuming that we are in the folder where the ["tools"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/) directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset and 500 subselected measurements:
 
 ```
 $ python trainer_files/only_ca/trainer_predict.py \

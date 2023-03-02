@@ -39,11 +39,11 @@ $ python -m pip install -e .
 
 ## User guide and tutorials
 
-The code is prepared to run training separately from the final prediction of the MRI signal and the estimations of the quantitative parameters for CL+eq and CL+par. Any script must be run at the path where the folders in the "tools" directory are stored. The detailed description of the different tasks of the project is available in the "[tutorials](https://github.com/aplanchu/ZEBRA-CA/tutorials/README.md)" folder. More detailed information about the python files with the code used to train the networks and estimate the quantitative paramters or predict the MRI signal is available in the "[tools](https://github.com/aplanchu/ZEBRA-CA/tools/README.md)" folder.
+The code is prepared to run training separately from the final prediction of the MRI signal and the estimations of the quantitative parameters for CL+eq and CL+par. Any script must be run at the path where the folders in the "tools" directory are stored. The detailed description of the different tasks of the project is available in the "[tutorials](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/README.md)" folder. More detailed information about the python files with the code used to train the networks and estimate the quantitative paramters or predict the MRI signal is available in the "[tools](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/README.md)" folder.
 
 ## License
 
-This project is distributed under the MIT License, Copyright (c) 2023 Álvaro Planchuelo-Gómez. For further details, read the [license](https://github.com/aplanchu/ZEBRA-CA/LICENSE) file.
+This project is distributed under the MIT License, Copyright (c) 2023 Álvaro Planchuelo-Gómez. For further details, read the [license](https://github.com/aplanchu/ZEBRA-CA/blob/main/LICENSE) file.
 
 ## Citation and References
 

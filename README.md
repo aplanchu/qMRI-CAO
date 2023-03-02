@@ -49,7 +49,7 @@ This project is distributed under the MIT License, Copyright (c) 2023 Álvaro Pl
 
 The preliminary results related to this project have been accepted for publication in the 2023 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition:
 
-Planchuelo-Gómez Á, Descoteaux M, Aja-Fernández S, Hutter J, Jones DK, Tax CMW. "Comparison of data-driven and physics-informed approaches for optimising multi-contrast MRI acquisition protocols". Proceedings of the 2023 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition (accepted for publication).
+* Planchuelo-Gómez Á, Descoteaux M, Aja-Fernández S, Hutter J, Jones DK, Tax CMW. "Comparison of data-driven and physics-informed approaches for optimising multi-contrast MRI acquisition protocols". Proceedings of the 2023 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition (accepted for publication).
 
 The results related to the first full data-driven concrete autoencoders approach applied to MRI data are in the following reference:
 

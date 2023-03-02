@@ -13,7 +13,7 @@ The idea of the three described joint selection and prediction methods is to ext
 
 The architecture of the three approaches is sketched below, including the equation employed for both physics-informed methods:
 
-<img src="https://github.com/aplanchu/ZEBRA-CA/selection_methods.png" width="1024">
+<img src="https://github.com/aplanchu/ZEBRA-CA/blob/main/selection_methods.png" width="1024">
 
 This figure shows an exampled based on the data employed in the Multi-dimensional Diffusion MRI (MUDI) challenge. From out of a total of 1344 MRI volumes, 500 sub-measurements were sampled and employed to predict the MRI signal from the whole dataset via a neural network (CL+NN) or the equation in the red area (CL+eq, and CL+par only after training is finished).
 

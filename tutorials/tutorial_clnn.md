@@ -2,7 +2,7 @@
 
 This tutorial shows how to train a network to select the optimal subset of MRI measurements with a full data-driven approach combining concrete autoencoders and neural networks.
 
-This tutorial makes reference to the files *script_indices_clnn* and *script_indices_clnn_predict*. For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
+This tutorial makes reference to the files [*script_indices_clnn*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/scripts_indices_clnn) and [*script_indices_clnn_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/scripts_indices_clnn_predict). For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
 
 1. **INPUT**. Input file.
 
@@ -52,7 +52,7 @@ This part makes reference to *script_indices_clnn*. The arguments of the script 
 
 * `in_memory` (**EDIT**): boolean indicating whether GPU (true) is used to train the method.
 
-Assuming that we are in the folder were the "tools" directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset and 500 subselected measurements:
+Assuming that we are in the folder where the ["tools"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/) directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset and 500 subselected measurements:
 
 ```
 $ python trainer_files/only_ca/trainer.py \

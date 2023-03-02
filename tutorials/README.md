@@ -26,18 +26,18 @@ The main output files, excluding intermmediate steps, are:
 
 * **Selected measurements**. Returned by the scripts related to training of a selection network. It is a txt file equivalent to the previously defined input related to selected measurements.
 
-The detailed python functions related to the training of the diverse approaches are described in the "[tools](../tools/README.md)" folder accesible from the root directory of this project. All the code contained in the scripts available in the "template_scripts" folder should be run in the "tools" folder.
+The detailed python functions related to the training of the diverse approaches are described in the "[tools](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/README.md)" folder accesible from the root directory of this project. All the code contained in the scripts available in the "template_scripts" folder should be run in the "tools" folder.
  
 The code was designed for a leave-one-out validation approach, so only one validation subject can be considered at the moment. Moreover, the code was designed to be run using one GPU.
 
 The tutorials describing each task are:
 
-* [**Tutorial CL+NN**](./tutorials/tutorial_clnn.md) describes the extraction of the sub-selected protocol and the prediction of the whole dataset with the upsampled MRI volumes with CL+NN, i.e., the full data-driven method.
+* [**Tutorial CL+NN**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/tutorial_clnn.md) describes the extraction of the sub-selected protocol and the prediction of the whole dataset with the upsampled MRI volumes with CL+NN, i.e., the full data-driven method.
 
-* [**Tutorial CL+eq**](./tutorials/tutorial_cleq.md) describes the extraction of the sub-selected protocol with CL+eq, i.e., the physics-informed method.
+* [**Tutorial CL+eq**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/tutorial_cleq.md) describes the extraction of the sub-selected protocol with CL+eq, i.e., the physics-informed method.
 
-* [**Tutorial CL+par**](./tutorials/tutorial_clpar.md) describes the extraction of the subselected protocol with CL+par, i.e., the method using the quantitative parameters in the loss function.
+* [**Tutorial CL+par**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/tutorial_clpar.md) describes the extraction of the subselected protocol with CL+par, i.e., the method using the quantitative parameters in the loss function.
 
-* [**Tutorial CL+eq estimation**](./tutorials/tutorial_cleq_onlyest.md) describes the estimation of the quantitative parameters and the prediction of the MRI signal from a specific sub-selected acquisition protocol optimising the signal prediction.
+* [**Tutorial CL+eq estimation**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/tutorial_cleq_onlyest.md) describes the estimation of the quantitative parameters and the prediction of the MRI signal from a specific sub-selected acquisition protocol optimising the signal prediction.
 
-* [**Tutorial CL+par estimation**](./tutorials/tutorial_clpar_onlyest.md) describes the estimation of the quantitative parameters and the prediction of the MRI signal from a specific sub-selected acquisition protocol optimising the parameter estimation.
+* [**Tutorial CL+par estimation**](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/tutorial_clpar_onlyest.md) describes the estimation of the quantitative parameters and the prediction of the MRI signal from a specific sub-selected acquisition protocol optimising the parameter estimation.

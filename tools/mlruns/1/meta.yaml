@@ -1,0 +1,4 @@
+artifact_location: file:///cubric/data/sapap9/runs_indices_maarten/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: concrete_autoencoder

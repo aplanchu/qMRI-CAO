@@ -1,6 +1,6 @@
 # Tutorial
 
-This file shows brief overview of the tutorial to run the code with the different tasks, including a description of the inputs and outputs of each task. First, general aspects of the inputs and outputs are briefly described. Then, a brief description of each individual task is shown, providing the details for each task in separate files. In the folder "template_scripts", separate files with scripts for each task are provided, assuming that miniconda is used.
+This file shows brief overview of the tutorial to run the code with the different tasks, including a description of the inputs and outputs of each task. First, general aspects of the inputs and outputs are briefly described. Then, a brief description of each individual task is shown, providing the details for each task in separate files. In the folder ["template_scripts"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/), separate files with scripts for each task are provided, assuming that miniconda is used.
 
 The inputs that require external files, excluding intermmediate processing steps, are:
 

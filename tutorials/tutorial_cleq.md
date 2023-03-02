@@ -2,7 +2,7 @@
 
 This tutorial shows how to train a network to select the optimal subset of MRI measurements with a physics-informed approach combining concrete autoencoders and a ZEBRA-based biophysical representation.
 
-This tutorial makes reference to the files *script_indices_cleq* and *script_indices_cleq_predict*. For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
+This tutorial makes reference to the files [*script_indices_cleq*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq) and [*script_indices_cleq_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq_predict). For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
 
 1. **INPUT**. Input file.
 
@@ -12,7 +12,7 @@ This tutorial makes reference to the files *script_indices_cleq* and *script_ind
 
 ## Training and selection of the optimal sub-selection protocol
 
-This part makes reference to *script_indices_cleq*. The arguments of the script are:
+This part makes reference to [*script_indices_cleq*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq). The arguments of the script are:
 
 * `data_file` (**INPUT**): h5 file that contains the dataset.
 
@@ -85,7 +85,7 @@ $ python trainer_files/zebra_ca/trainer_v2.py \
 
 ## Saving the estimated parameters and predicted MRI signal
 
-This part makes reference to *script_indices_cleq_predict*. In comparison with the previous script, the argument `path_save_ind` is no longer used. The additional arguments of the script are:
+This part makes reference to [*script_indices_cleq_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq_predict). In comparison with the previous script, the argument `path_save_ind` is no longer used. The additional arguments of the script are:
 
 * `mask_file` (**INPUT**, optional): nifti file with the mask of the validation subject.
 
@@ -93,13 +93,13 @@ This part makes reference to *script_indices_cleq_predict*. In comparison with t
 
 * `path_save` (**OUTPUT**): txt or nifti (if a mask is provided) file where the predicted MRI signal for all volumes of the validation subject is saved.
 
-* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step (*script_indices_cleq*).
+* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step ([*script_indices_cleq*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq)).
 
 * `checkpoint` (**EDIT**): ckpt file from the saved hyperparameters of the first training step.
 
 The two last parameters can be used as well in the first training step, although this is not recommended as the temperature parameters of the concrete autoencoder would be the same as for the first epoch (i.e., different to the last saved epoch) and hence the training of the network would not be a continuation of the previous running.
 
-Assuming that we are in the folder were the "tools" directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
+Assuming that we are in the folder where the ["tools"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/) directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
 
 ```
 $ python trainer_files/zebra_ca/trainer_predict_v2.py \

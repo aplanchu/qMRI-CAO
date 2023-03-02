@@ -36,10 +36,10 @@ Furthermore, for each running script without errors before starting the first ep
 
 Some python files in the directory *./src/autoencoder2/* not shown in the user guide files are described below:
 
-* `argparse2.py`. This file contains functions to employ paths or specific files as arguments in the diverse scripts.
+* [`argparse2.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/argparse2.py). This file contains functions to employ paths or specific files as arguments in the diverse scripts.
 
-* `dataset2.py`. This file allows to use a specific database and GPU, specifically an h5 file with a csv header. It is important to note that the number of employed CPUs for pytorch generators can be modified setting the value of the parameter *self.num_workers* in the class **MRIDataModule** and removing the corresponding commented code. 
+* [`dataset2.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/dataset2.py). This file allows to use a specific database and GPU, specifically an h5 file with a csv header. It is important to note that the number of employed CPUs for pytorch generators can be modified setting the value of the parameter *self.num_workers* in the class **MRIDataModule** and removing the corresponding commented code. 
 
-* `dataset2cpu.py`. This file makes the same function of `dataset2.py`, but designed for only CPU.
+* [`dataset2cpu.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/dataset2cpu.py). This file makes the same function of `dataset2.py`, but designed for only CPU.
 
-* `logger.py`. This file allows to create log files (nothing relevant for the training itself).
+* [`logger.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/logger.py). This file allows to create log files (nothing relevant for the training itself).

@@ -56,7 +56,7 @@ This part makes reference to *script_indices_cleq*. The arguments of the script 
 
 * `in_memory` (**EDIT**): boolean indicating whether GPU (true) is used to train the method.
 
-Assuming that we are in the folder were the "tools" directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
+Assuming that we are in the folder where the ["tools"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/) directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
 
 ```
 $ python trainer_files/zebra_ca/trainer_v2.py \

@@ -2,7 +2,7 @@
 
 This tutorial shows how to train a network to estimate the quantitative parameters and predict the MRI signal using a ZEBRA-based biophysical representation and a predefined MRI sub-protocol.
 
-This tutorial makes reference to the files *script_cleq_onlyzebra* and *script_cleq_onlyzebra_predict*. For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
+This tutorial makes reference to the files [*script_cleq_onlyzebra*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra) and [*script_cleq_onlyzebra_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra_predict). For each script, the relevant arguments are briefly described and the example available in each script is shown to better understand the running of the script. Diverse categories for the arguments are also shown:
 
 1. **INPUT**. Input file.
 
@@ -12,7 +12,7 @@ This tutorial makes reference to the files *script_cleq_onlyzebra* and *script_c
 
 ## Training for estimation of quantitative parameters and prediction of the MRI signal
 
-This part makes reference to *script_cleq_onlyzebra*. The arguments of the script are:
+This part makes reference to [*script_cleq_onlyzebra*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra). The arguments of the script are:
 
 * `data_file` (**INPUT**): h5 file that contains the dataset.
 
@@ -38,7 +38,7 @@ This part makes reference to *script_cleq_onlyzebra*. The arguments of the scrip
 
 * `seed_number` (**EDIT**, optional): integer showing a seed initialisation (default = 42).
 
-* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in *script_indices_cleq_predict*.
+* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in [*script_cleq_onlyzebra_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra_predict).
 
 * `mridata_path` (**INPUT**): string indicating the path of the txt file where the values of the acquisition parameters are shown.
 
@@ -46,7 +46,7 @@ This part makes reference to *script_cleq_onlyzebra*. The arguments of the scrip
 
 * `in_memory` (**EDIT**): boolean indicating whether GPU (true) is used to train the method.
 
-Assuming that we are in the folder were the "tools" directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
+Assuming that we are in the folder where the ["tools"](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/) directory is saved and that we are using the environment available in the root directory of the project, an example is shown below for the MUDI dataset, 500 subselected measurements and the ZEBRA-based model:
 
 ```
 $ python trainer_files/onlyzebra/trainer_onlyzebra.py \
@@ -70,7 +70,7 @@ $ python trainer_files/onlyzebra/trainer_onlyzebra.py \
 
 ## Saving the estimated parameters and predicted MRI signal
 
-This part makes reference to *script_cleq_onlyzebra_predict*. The additional arguments of the script are:
+This part makes reference to [*script_cleq_onlyzebra_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra_predict). The additional arguments of the script are:
 
 * `input_output_size` (**EDIT**, optional): integer showing the total number of MRI measurements (default = 1344 for the MUDI dataset).
 
@@ -80,7 +80,7 @@ This part makes reference to *script_cleq_onlyzebra_predict*. The additional arg
 
 * `path_save` (**OUTPUT**): txt or nifti (if a mask is provided) file where the predicted MRI signal for all volumes of the validation subject is saved.
 
-* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step (*script_indices_cleq*).
+* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step ([*script_cleq_onlyzebra*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_cleq_onlyzebra)).
 
 * `checkpoint` (**EDIT**): ckpt file from the saved hyperparameters of the first training step.
 

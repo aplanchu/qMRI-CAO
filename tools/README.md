@@ -18,7 +18,7 @@ It is important to note some files that are generated when running diverse scrip
 
 ### mlruns
 
-For each run, a new folder is created in the directory *mlruns/0/* (it could also be *1* instead of *0*). The name of the generated folder is a sequence of characters (numbers and letters) without an obvious pattern to follow in relation to the running script. Thus, to associate the content of this folder to a particular script, this folder should be checked. In any case, this content is not important to obtain the main results and it can be checked in relation to some training parameters and metrics. Each generated folder contains the following subdirectories:
+For each run, a new folder is created in the directory [*mlruns/0/*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/mlruns/0/) (it could also be [*1*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/mlruns/0/) instead of *0*). The name of the generated folder is a sequence of characters (numbers and letters) without an obvious pattern to follow in relation to the running script. Thus, to associate the content of this folder to a particular script, this folder should be checked. In any case, this content is not important to obtain the main results and it can be checked in relation to some training parameters and metrics. Each generated folder contains the following subdirectories:
 
 * **metrics**. This folder contains different files that show some metrics associated with the concrete autoencoder training, such as the temperature through epochs, or the training and validation loss through epochs.
 

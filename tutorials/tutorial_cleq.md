@@ -48,7 +48,7 @@ This part makes reference to [*script_indices_cleq*](https://github.com/aplanchu
 
 * `path_save_ind` (**OUTPUT**): string indicating the path of the txt file where the values of the rows reflecting the selected sub-protocol are saved after the training.
 
-* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in *script_indices_cleq_predict*.
+* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in [*script_indices_cleq_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_cleq_predict).
 
 * `mridata_path` (**INPUT**): string indicating the path of the txt file where the values of the acquisition parameters are shown.
 

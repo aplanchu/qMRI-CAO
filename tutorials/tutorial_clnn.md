@@ -46,7 +46,7 @@ This part makes reference to [*script_indices_clnn*](https://github.com/aplanchu
 
 * `path_save_ind` (**OUTPUT**): string indicating the path of the txt file where the values of the rows reflecting the selected sub-protocol are saved after the training.
 
-* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in *script_indices_clnn_predict*.
+* `folder_hyperparams` (**OUTPUT**): string indicating the path where the folder with the hyperparameters and diverse training results, including the hyperparameters of the best model, are saved. Values from this folder are used in [*script_indices_clnn_predict*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_clnn_predict).
 
 * `stopping_threshold` (**EDIT**, optional): value indicating the mean maximum value related to the concrete layer used as stopping criterion alternatively to the maximum number of epochs (default = 0.998).
 
@@ -85,7 +85,7 @@ This part makes reference to [*script_indices_clnn_predict*](https://github.com/
 
 * `path_save` (**OUTPUT**): txt or nifti (if a mask is provided) file where the predicted MRI signal for all volumes of the validation subject is saved.
 
-* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step (*script_indices_cleq*).
+* `hparams` (**EDIT**): *hparams.yaml* file with the saved hyperparameters from the first training step ([*script_indices_clnn*](https://github.com/aplanchu/ZEBRA-CA/tree/main/tutorials/template_scripts/script_indices_clnn)).
 
 * `checkpoint` (**EDIT**): ckpt file from the saved hyperparameters of the first training step.
 

@@ -77,14 +77,14 @@ def trainer(args: Namespace) -> None:
         args,
         callbacks=[
             EarlyStopping(
-                monitor="val_loss",
+                monitor="train_loss",
                 mode="min",
                 patience=float("inf"),
                 stopping_threshold=args.stopping_threshold,
                 verbose=is_verbose,
             ),
             ModelCheckpoint(
-                monitor="val_loss",
+                monitor="train_loss",
                 mode="min",
                 save_top_k=1,
                 verbose=is_verbose,
@@ -114,8 +114,8 @@ def trainer(args: Namespace) -> None:
     pred_sig_save[pred_sig_save == 0] = float('nan')
     batch_idx = 0
     for element in prediction:
-        param_save[batch_idx*256:(batch_idx+1)*256,:] = element[0]
-        pred_sig_save[batch_idx*256:(batch_idx+1)*256,:] = element[1]
+        param_save[batch_idx*args.batch_size:(batch_idx+1)*args.batch_size,:] = element[0]
+        pred_sig_save[batch_idx*args.batch_size:(batch_idx+1)*args.batch_size,:] = element[1]
         batch_idx = batch_idx+1
     
     # we estimate dperp
@@ -203,7 +203,7 @@ if __name__ == "__main__":
         type=float,
         required=False,
         metavar="N",
-        help="Validation loss value (mean-squared error) used as stopping threshold value before reaching the established maximum number of epochs",
+        help="Loss value (mean-squared error) used as stopping threshold value before reaching the established maximum number of epochs",
     )
 
     parser = pl.Trainer.add_argparse_args(parent_parser=parser)

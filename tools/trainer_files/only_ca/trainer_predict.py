@@ -114,7 +114,7 @@ def trainer(args: Namespace) -> None:
     pred_sig_save[pred_sig_save == 0] = float('nan')
     batch_idx = 0
     for element in prediction:
-        pred_sig_save[batch_idx*256:(batch_idx+1)*256,:] = element[1]
+        pred_sig_save[batch_idx*args.batch_size:(batch_idx+1)*args.batch_size,:] = element[1]
         batch_idx = batch_idx+1
     
     # Save as txt if there is no mask (path should be provided as txt), and as nifti if a mask is provided

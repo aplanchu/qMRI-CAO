@@ -72,14 +72,14 @@ def trainer(args: Namespace) -> None:
         args,
         callbacks=[
             EarlyStopping(
-                monitor="train_loss",
+                monitor="val_loss",
                 mode="min",
                 patience=float("inf"),
                 stopping_threshold=args.stopping_threshold,
                 verbose=is_verbose,
             ),
             ModelCheckpoint(
-                monitor="train_loss",
+                monitor="val_loss",
                 mode="min",
                 save_top_k=1,
                 verbose=is_verbose,

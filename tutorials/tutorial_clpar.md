@@ -136,3 +136,5 @@ $ python trainer_files/zebra_ca_evmaps/trainer_predict_v2.py \
     --checkpoint PATH_hparams/hyperparams_clpar/checkpoints/epoch=XXXX-step=XXXXXX.ckpt \
     --in_memory
 ```
+
+NOTE: if prediction from a test subject not included in the training or validation datasets is desired, the *data_file* and *header_file* parameters should be changed to a dataset that additionally incorporates the test subject, and the parameter *val_subj* should be changed to the ID of the test subject.

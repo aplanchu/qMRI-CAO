@@ -117,3 +117,5 @@ $ python trainer_files/only_ca/trainer_predict.py \
     --checkpoint PATH_hparams/hyperparams_clnn/checkpoints/epoch=XXXX-step=XXXXXX.ckpt \
     --in_memory
 ```
+
+NOTE: if prediction from a test subject not included in the training or validation datasets is desired, the *data_file* and *header_file* parameters should be changed to a dataset that additionally incorporates the test subject, and the parameter *val_subj* should be changed to the ID of the test subject.

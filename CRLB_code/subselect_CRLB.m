@@ -1,5 +1,5 @@
 function [assignment,cost] = subselect_CRLB(N,protocol_file,parameters_file)
-% Function to obtain the selected measurements via the Cramer-Rao Lower
+% Function to obtain the selected measurements via the Cramér-Rao Lower
 % Bound (CRLB)-based optimisation. A set of measurements is taken from a
 % prespecified acquisition protocol by comparing the CRLB-based protocol
 % with the prespecifed one and taking the most similar specifications. This

@@ -19,7 +19,7 @@ This figure shows an exampled based on the data employed in the Multi-dimensiona
 
 ## Cramér-Rao Lower Bound (CRLB)-based optimisation
 
-Separately from the main code, the CRLB-based optimisation to obtain an acquisition protocol and obtain the closest measurements of a prespecified protocol is implemented. For further details, press [*here*](https://github.com/aplanchu/ZEBRA-CA/tree/main/CRLB_code/README.md).
+Separately from the main code, the CRLB-based optimisation to obtain an acquisition protocol and obtain the closest measurements of a prespecified protocol is implemented. For further details, press [*here*](https://github.com/aplanchu/ZEBRA-CA/tree/main/CRLB_code/).
 
 ## Dependencies
 

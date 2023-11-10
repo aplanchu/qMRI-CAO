@@ -1,4 +1,4 @@
-% Script to obtain and save the Cramer Rao Lower Bound (CRLB)-based 
+% Script to obtain and save the Cramér-Rao Lower Bound (CRLB)-based 
 % protocol. This script should be the first to run. To run the script, it's
 % necessary to predefine the following parameters:
 % - "N": number of sampled sets of measurements, i.e., of a group of a

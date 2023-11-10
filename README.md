@@ -17,6 +17,10 @@ The architecture of the three approaches is sketched below, including the equati
 
 This figure shows an exampled based on the data employed in the Multi-dimensional Diffusion MRI (MUDI) challenge. From out of a total of 1344 MRI volumes, 500 sub-measurements were sampled and employed to predict the MRI signal from the whole dataset via a neural network (CL+NN) or the equation in the red area (CL+eq, and CL+par only after training is finished).
 
+## Cramér-Rao Lower Bound (CRLB)-based optimisation
+
+Separately from the main code, the CRLB-based optimisation to obtain an acquisition protocol and obtain the closest measurements of a prespecified protocol is implemented. For further details, press [*here*](https://github.com/aplanchu/ZEBRA-CA/tree/main/CRLB_code/README.md).
+
 ## Dependencies
 
 It is recommended to use Conda or Miniconda. An environment file is provided with the necessary dependencies. The environment can be installed as follows:

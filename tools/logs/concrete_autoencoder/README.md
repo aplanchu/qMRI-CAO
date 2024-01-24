@@ -1,1 +1,1 @@
-This directory stores temporary directories in relation to folders with hyperparameters for the running scripts. Furthermore, if a there is an error when running the script, the temporary folder stays in this directory.
+This directory stores temporary directories in relation to folders with hyperparameters for the running scripts. Furthermore, if there is an error when running the script, the temporary folder stays in this directory.

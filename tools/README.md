@@ -43,3 +43,9 @@ Some python files in the directory [*src/autoencoder2/*](https://github.com/apla
 * [`dataset2cpu.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/dataset2cpu.py). This file makes the same function of [`dataset2.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/dataset2.py), but designed for only CPU.
 
 * [`logger.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/logger.py). This file allows to create log files (nothing relevant for the training itself).
+
+### Reference
+
+If you are using this code, please cite the following reference:
+
+Planchuelo-Gómez Á, Descoteaux M, Larochelle H, Hutter J, Jones DK, Tax CMW. Optimisation of quantitative brain diffusion-relaxation MRI acquisition protocols with physics-informed machine learning. 2024. Medical Image Analysis, 94: 103134. DOI: [`10.1016/j.media.2024.103134`](https://doi.org/10.1016/j.media.2024.103134)

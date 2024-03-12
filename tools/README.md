@@ -44,7 +44,7 @@ Some python files in the directory [*src/autoencoder2/*](https://github.com/apla
 
 * [`logger.py`](https://github.com/aplanchu/ZEBRA-CA/tree/main/tools/src/autoencoder2/logger.py). This file allows to create log files (nothing relevant for the training itself).
 
-### Reference
+## Reference
 
 If you are using this code, please cite the following reference:
 

@@ -51,9 +51,9 @@ This project is distributed under the MIT License, Copyright (c) 2023 Álvaro Pl
 
 ## Citation and References
 
-The preliminary results related to this project have been accepted for publication in the 2023 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition:
+The results related to this project have been published in the following reference:
 
-* Planchuelo-Gómez Á, Descoteaux M, Aja-Fernández S, Hutter J, Jones DK, Tax CMW. "Comparison of data-driven and physics-informed approaches for optimising multi-contrast MRI acquisition protocols". Proceedings of the 2023 International Society for Magnetic Resonance in Medicine Annual Meeting & Exhibition (accepted for publication).
+* Planchuelo-Gómez Á, Descoteaux M, Larochelle H, Hutter J, Jones DK, Tax CMW. "Optimisation of quantitative brain diffusion-relaxation MRI acquisition protocols with physics-informed machine learning". Medical Image Analysis 2024, 94: 103134. DOI: [10.1016/j.media.2024.103134](https://doi.org/10.1016/j.media.2024.103134).
 
 The results related to the first full data-driven concrete autoencoders approach applied to MRI data are in the following reference:
 

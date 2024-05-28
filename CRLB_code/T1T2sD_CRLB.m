@@ -13,15 +13,15 @@
 % The CRLB-based protocol is finally saved using the format
 % 'protocolN.mat'. If another name is prefered, MODIFY IN LINE 106
 %
-% Authors: Chantal Tax & Alvaro Planchuelo-Gomez, version 10 Novemeber 2023
+% Authors: Chantal Tax & Alvaro Planchuelo-Gomez, version 28 May 2024
 
 clear;
 %% Derive equations
 % syms S bval TI TR TD gx gy gz Theta Phi Dpar Dper S0 T2s T1 real positive 
 % x = [Theta,Phi,Dpar,Dper,T2s,T1,S0];
 % b_delta = 1;
-% S = simplify(x(7) .* exp(b_delta ./ 3.0 .* bval .* (x(3) - x(4)) - bval ./ 3.0 .* (x(4) + 2.0 .* x(3)) - bval .* b_delta .* ((dot([gx gy gz],[cos(x(2))*sin(x(1)),sin(x(1))*sin(x(2)),cos(x(1))],2)).^2 .* (x(3) - x(4)))) ...
-%             .* abs(1.0 - 2.0 .* exp(-TI./x(6)) + exp(-TR./x(6))) .* exp(-TD./x(5)));
+% S = simplify(x(7) .* exp(b_delta ./ 3.0 .* bval .* (x(3) - x(4)) - bval ./ 3.0 .* (x(3) + 2.0 .* x(4)) - bval .* b_delta .* ((dot([gx gy gz],[cos(x(2))*sin(x(1)),sin(x(1))*sin(x(2)),cos(x(1))],2)).^2 .* (x(3) - x(4)))) ...
+%             .* abs(1.0 - 2.0 .* exp(-TI./x(6)) + exp(-TR./x(6))) .* exp(-TD./x(5))); %updated equation x(3) + 2.0 .* x(4) in the second term instead of x(4) + 2.0 .* x(3) as diffusivities were underestimated
 % 
 % dSdTheta = simplify(diff(S,Theta));
 % dSdPhi = simplify(diff(S,Phi));
@@ -31,8 +31,8 @@ clear;
 % dSdT1 = simplify(diff(S,T1));
 % dSdS0 = simplify(diff(S,S0));
 
-%% Set up tissue parameters
-Theta = 0.5; Phi = 0.5; Dpar = 2; Dper = 1; T2s = 4; T1 = 1.5; S0 = 1; % scale everything around 1; D in mum2/ms, T2* in 10^1 ms, T1 in s
+%% Set up tissue parameters (updated; original values for the paper 0.5, 0.5, 2, 1, 4, 1.5, 1, preserved SNR and TR)
+Theta = 1.56; Phi = 1.88; Dpar = 0.81; Dper = 0.58; T2s = 7.2; T1 = 1.159; S0 = 2.37; % scale everything around 1; D in mum2/ms, T2* in 10^1 ms, T1 in s
 SNR = 30; sigma = S0/SNR;
 TR = 7.5; 
 
@@ -118,16 +118,15 @@ F = CRLB(Theta,Phi,Dpar,Dper,T2s,T1,S0,bval,TD,TI,TR,g,sigma);
 end
 
 % Function to implement the CRLB-based optimisation using the Jacobian
-% matrix
+% matrix (updated derivatives according to new equation as shown in line 23)
 function F = CRLB(Theta,Phi,Dpar,Dper,T2s,T1,S0,bval,TD,TI,TR,g,sigma)
 gx = g(:,1); gy = g(:,2); gz = g(:,3);
-dSdTheta = double(-2.*S0.*bval.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(Dpar - Dper).*(gx.*cos(Phi).*cos(Theta) - gz.*sin(Theta) + gy.*cos(Theta).*sin(Phi)).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)));
-dSdPhi = double(-2.*S0.*bval.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(Dpar - Dper).*(gy.*cos(Phi).*sin(Theta) - gx.*sin(Phi).*sin(Theta)).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)));
-dSdDpar = double(-S0.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(bval./3 + bval.*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2));
-dSdDper = double(-S0.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*((2.*bval)./3 - bval.*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2));
-dSdT2s = double((S0.*TD.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1))./T2s.^2);
-dSdT1 = double(-S0.*exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*sign(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*((2.*TI.*exp(-TI./T1))./T1.^2 - (TR.*exp(-TR./T1))./T1.^2));
-dSdS0 = double(exp((bval.*(Dpar - Dper))./3 - (bval.*(2.*Dpar + Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1));
+dSdPhi = double(-2.*S0.*bval.*exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(Dpar - Dper).*(gy.*cos(Phi).*sin(Theta) - gx.*sin(Phi).*sin(Theta)).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)));
+dSdDpar = double(-S0.*bval.*exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2);
+dSdDper = double(-S0.*exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*(bval - bval.*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2));
+dSdT2s = double((S0.*TD.*exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1))./T2s.^2);
+dSdT1 = double(-S0.*exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*sign(exp(-TR./T1) - 2.*exp(-TI./T1) + 1).*((2.*TI.*exp(-TI./T1))./T1.^2 - (TR.*exp(-TR./T1))./T1.^2));
+dSdS0 = double(exp((bval.*(Dpar - Dper))./3 - (bval.*(Dpar + 2.*Dper))./3 - bval.*(Dpar - Dper).*(gz.*cos(Theta) + gx.*cos(Phi).*sin(Theta) + gy.*sin(Phi).*sin(Theta)).^2).*exp(-TD./T2s).*abs(exp(-TR./T1) - 2.*exp(-TI./T1) + 1));
 
 J = 1/sigma.^2*[dSdTheta'*dSdTheta, dSdPhi'*dSdTheta, dSdDpar'*dSdTheta, dSdDper'*dSdTheta, dSdT2s'*dSdTheta, dSdT1'*dSdTheta, dSdS0'*dSdTheta;
     dSdPhi'*dSdTheta,     dSdPhi'*dSdPhi,   dSdDpar'*dSdPhi,   dSdDper'*dSdPhi,   dSdPhi'*dSdT2s,   dSdPhi'*dSdT1,   dSdPhi'*dSdS0;

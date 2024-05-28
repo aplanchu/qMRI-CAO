@@ -318,8 +318,8 @@ class qmrizebra(pl.LightningModule):
         TR = self.mriseq[6,:]
         # we assume that b_delta = 1
         
-        if x.dim()==1:
-            b_D = self.b_delta / 3.0 * bval * (x[2] - x[3]*x[2]) - bval / 3.0 * (x[3]*x[2] + 2.0 * x[2]) - bval * self.b_delta * (torch.square(torch.dot([x1,x2,x3],[torch.cos(x[1])*torch.sin(x[0]),torch.sin(x[0])*torch.sin(x[1]),torch.cos(x[0])])) * (x[2] - x[3]*x[2]))
+        if x.dim()==1: # Updated equation in the second term of b_D (Dpar+2Dperp instead of Dperp+2Dpar to compensate underestimated diffusivities from the equation displayed in the reference)
+            b_D = self.b_delta / 3.0 * bval * (x[2] - x[3]*x[2]) - bval / 3.0 * (x[2] + 2.0 * x[3]*x[2]) - bval * self.b_delta * (torch.square(torch.dot([x1,x2,x3],[torch.cos(x[1])*torch.sin(x[0]),torch.sin(x[0])*torch.sin(x[1]),torch.cos(x[0])])) * (x[2] - x[3]*x[2]))
             s_tot = x[6] * texp(b_D) * tabs(1.0 - 2.0 * texp(-TI/x[5]) + texp(-TR/x[5])) * texp(-TD/x[4])
             x = 1.0*s_tot
             return x
@@ -335,7 +335,7 @@ class qmrizebra(pl.LightningModule):
             TR = tshape(TR, (1,self.Nmeas))
             
             b_D = self.b_delta / 3.0 * tmat(tshape(x[:,2] - x[:,3]*x[:,2], (Nvox,1)), bval)
-            b_D = b_D - 1.0 / 3.0 * tmat(tshape(x[:,3]*x[:,2] + 2.0 * x[:,2], (Nvox,1)), bval)
+            b_D = b_D - 1.0 / 3.0 * tmat(tshape(x[:,2] + 2.0 * x[:,3]*x[:,2], (Nvox,1)), bval) # updated (Dpar+2Dperp instead of Dperp+2Dpar to compensate underestimated diffusivities from the equation displayed in the reference)
             angles_dprod = tmat(tshape(torch.sin(x[:,0])*torch.cos(x[:,1]), (Nvox,1)), x1) + tmat(tshape(torch.sin(x[:,1])*torch.sin(x[:,0]), (Nvox,1)), x2) + tmat(tshape(torch.cos(x[:,0]), (Nvox,1)), x3)
             b_D_term3 = tmat(tshape(x[:,2] - x[:,3]*x[:,2], (Nvox,1)), bval) * torch.square(angles_dprod)
             b_D = b_D - self.b_delta * b_D_term3
